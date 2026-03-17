@@ -2,6 +2,14 @@ const API_URL = "http://localhost:8000/api/users"; //link da Api//
 
 
 //Função para buscar os usuários
-async function fetchUsers() {
+async function loadUsers() {
+    const response = await fetch(API_URL);
+    const users = await response.json();
 
-    try {
+    
+
+
+    console.log("Meus usuários chegaram da API:", users);
+
+}
+loadUsers();
