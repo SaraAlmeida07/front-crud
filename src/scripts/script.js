@@ -19,7 +19,7 @@ async function loadUsers() {
                         <h6 class="card-title">${user.name}</h6>
                         <p class="card-text mb-1"><small>Age: ${user.age}</small></p>
                         <p class="card-text mb-3"><small>Email: ${user.email}</small></p>
-                        <button class="btn btn-outline-secondary btn-sm" onclick="editUser(${user.id}, '${user.name}', ${user.age}, '${user.email}')">Edit</button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="prepararEdicao(${user.id}, '${user.name}', ${user.age}, '${user.email}')">Edit</button>
                         <button class="btn btn-outline-danger btn-sm" onclick="deleteUser(${user.id})">Delete</button>
                     </div>
                 </div>

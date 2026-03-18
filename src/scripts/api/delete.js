@@ -1,6 +1,4 @@
 async function deleteUser(id) {
-    const confirmDelete = confirm("Are you sure you want to delete this user?");
-    if (!confirmDelete) return;
 
     try {
         const response = await fetch(`${API_URL}?id=${id}`, {
