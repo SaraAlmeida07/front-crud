@@ -1,0 +1,8 @@
+# Usa uma imagem oficial e super leve do Nginx
+FROM nginx:alpine
+
+# Copia todo o conteúdo da pasta src para a pasta pública do Nginx
+COPY ./src /usr/share/nginx/html
+
+# Informa que o container vai rodar na porta 80 internamente
+EXPOSE 8080

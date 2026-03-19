@@ -13,7 +13,7 @@ async function loadUsers() {
            <div class="col-12 col-md-4 col-lg-3 mb-3">
                 
                 <div class="card shadow-sm h-100 border-0 bg-white">
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column card-U ">
                         
                         <h6 class="card-title text-truncate fw-bold mb-3" title="${user.name}">${user.name}</h6>
                         
@@ -21,7 +21,7 @@ async function loadUsers() {
                         <p class="card-text mb-4 text-truncate text-secondary" title="${user.email}"><small>${user.email}</small></p>
                         
                         <div class="d-flex gap-2 mt-auto">
-                            <button class="btn btn-dark btn-sm flex-grow-1" onclick="prepararEdicao(${user.id}, '${user.name}', ${user.age}, '${user.email}')">Edit</button>
+                            <button class="btn btn-dark btn-sm flex-grow-1 edit-btn" onclick="prepararEdicao(${user.id}, '${user.name}', ${user.age}, '${user.email}')">Edit</button>
                             <button class="btn btn-outline-danger btn-sm flex-grow-1" onclick="deletarUsuario(${user.id})">Delete</button>
                         </div>
                         

@@ -1,0 +1,7 @@
+services:
+  frontend:
+    build: .
+    ports:
+      - "5500:8080"
+    container_name: js-crud-frontend
+    restart: always
