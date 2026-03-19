@@ -1,16 +1,11 @@
 async function deleteUser(id) {
 
     try {
-        const response = await fetch(`${API_URL}?id=${id}`, {
-            method: 'DELETE' // Define o método HTTP como DELETE para excluir um usuário//
-        });
+        await axios.delete(`${API_URL}?id=${id}`);
+        return true;
 
-        if (response.ok) {
-            loadUsers();
-        } else {
-            console.error('Failed to delete user');
-        }
     } catch (error) {
-        console.error("Erro de rede:", error.message);
+        console.error("Erro de rede:", error.response ? error.response.data : error.message);
+        return false;
     }
 }   

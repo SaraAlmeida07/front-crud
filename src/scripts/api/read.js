@@ -3,14 +3,10 @@
 async function apiGetUsers() {
     try {
         // Envia a requisição GET 
-        const response = await fetch(API_URL);
+        const response = await axios.get(API_URL);
 
 
-        if (!response.ok) {
-            console.error("Erro do servidor ao buscar usuários. Status:", response.status);
-            return [];
-        }
-        const data = await response.json();
+        const data = response.data;
         return data.users;
 
     } catch (error) {

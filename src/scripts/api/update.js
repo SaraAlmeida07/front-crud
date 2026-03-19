@@ -1,27 +1,19 @@
 async function apiPutUser(id, usuarioCompleto) {
     try {
-        const response = await fetch(`${API_URL}?id=${id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(usuarioCompleto)
-        });
-        return response.ok;
+        await axios.put(`${API_URL}?id=${id}`, usuarioCompleto);
+        return true;
     } catch (error) {
-        console.error("Erro no PUT:", error);
+        console.error("Erro no PUT:", error.response ? error.response.data : error.message);
         return false;
     }
 }
 
 async function apiPatchUser(id, mudancas) {
     try {
-        const response = await fetch(`${API_URL}?id=${id}`, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(mudancas)
-        });
-        return response.ok;
+        await axios.patch(`${API_URL}?id=${id}`, mudancas);
+        return true;
     } catch (error) {
-        console.error("Erro no PATCH:", error);
+        console.error("Erro no PATCH:", error.response ? error.response.data : error.message);
         return false;
     }
 }
