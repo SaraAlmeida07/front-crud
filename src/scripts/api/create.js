@@ -1,11 +1,12 @@
-const API_URL = "http://localhost:8000/api/users";
+
 
 async function apiCreateUser(newUser) {
     try {
         await axios.post(API_URL, newUser);
         return true;
     } catch (error) {
-        console.error("Erro no POST:", error);
+        const errorMessage = error.response ? error.response.data : error.message;
+        console.error("Erro no POST:", errorMessage);
         return false;
     }
 }

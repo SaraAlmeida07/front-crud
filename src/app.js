@@ -1,6 +1,7 @@
 // Variáveis de controle globais
 let usuarioSendoEditadoId = null;
 let dadosOriginais = null;
+const API_URL = "http://localhost:8000/api/users";
 
 // ==========================================
 // FUNÇÕES DISPARADAS PELOS BOTÕES DOS CARDS
